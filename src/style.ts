@@ -1,19 +1,32 @@
-import homeBackground from "./assets/background_start_page.png";
+import { Theme } from "@mui/material";
+import backgroundImage from "./assets/background_start_page.png";
+import backgroundImageMobile from "./assets/background_start_page_mobile.png";
 
-export const container = {
+export const background = ({ theme }: { theme: Theme }) => ({
   display: "flex",
   height: "100vh",
-  backgroundImage: `url(${homeBackground})`,
+  backgroundImage: `url(${backgroundImage})`,
+  backgroundSize: "1800px",
+  [theme.breakpoints.down("md")]: {
+    backgroundImage: `url(${backgroundImageMobile})`,
+    backgroundSize: "700px",
+  },
   backgroundPosition: "center",
   backgroundColor: "rgba(210, 210, 210)",
   backgroundAttachment: "scroll",
-  backgroundSize: "1800px",
-};
+});
 
 export const logo = {
+  height: "17.5vw",
+  width: "auto",
+  maxHeight: "175px",
+  minHeight: "80px",
+};
+
+export const openLCA = {
   height: "15.5vw",
   width: "auto",
-  maxHeight: "145px",
+  maxHeight: "155px",
   minHeight: "80px",
 };
 
@@ -23,9 +36,13 @@ export const gdLink = {
   right: "3vh",
 };
 
-export const loginForm = {
-  
-}
+export const loginForm = ({ theme }: { theme: Theme }) => ({
+  display: "flex",
+  justifyContent: "flex-start",
+  [theme.breakpoints.down("md")]: {
+    justifyContent: "center",
+  },
+});
 
 export const input = {
   width: "100%",

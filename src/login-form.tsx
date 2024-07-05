@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { button, input, label, labelElement, loginForm } from "./style";
+import { button, input, label, labelElement } from "./style";
 
 export enum LoginFormKeys {
   Email = "email",
@@ -12,7 +12,7 @@ const LoginForm = () => {
   return (
     <form method={"post"}>
       <Box>
-        <table style={loginForm}>
+        <table>
           <tr>
             <td style={labelElement}>
               <label htmlFor={LoginFormKeys.Email} style={label}>

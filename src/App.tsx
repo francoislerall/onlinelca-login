@@ -1,21 +1,16 @@
 import { Grid, Typography, Stack, Box, styled } from "@mui/material";
-import { container, logo } from "./style";
+import { background, loginForm, logo, openLCA } from "./style";
 import appLogo from "./assets/logo.svg";
 import onlinelca from "./assets/onlinelca.png";
 import LoginForm from "./login-form";
 import GreenDeltaLogo from "./green-delta-logo";
 
-const LoginFormItem = styled(Grid)(({ theme }) => ({
-  display: "flex",
-  justifyContent: "flex-start",
-  [theme.breakpoints.down("md")]: {
-    justifyContent: "center",
-  },
-}));
+const BackgroundBox = styled(Box)(background);
+const LoginFormItem = styled(Grid)(loginForm);
 
 const App = () => {
   return (
-    <Box style={container}>
+    <BackgroundBox>
       <Grid container alignItems={"center"}>
         <Grid item md={8} xs={12}>
           <LoginComponent />
@@ -25,7 +20,7 @@ const App = () => {
       </Grid>
 
       <GreenDeltaLogo />
-    </Box>
+    </BackgroundBox>
   );
 };
 
@@ -34,7 +29,7 @@ const LoginComponent = () => {
   const error = "";
 
   return (
-    <Grid container rowSpacing={5}>
+    <Grid container rowSpacing={5} alignContent={"center"}>
       <Grid
         item
         md={6}
@@ -45,8 +40,8 @@ const LoginComponent = () => {
       >
         <img src={appLogo} alt="logo" style={logo} />
       </Grid>
-      <Grid item md={6} xs={7}>
-        <img src={onlinelca} alt="onlineLCA" style={logo} />
+      <Grid item md={6} xs={7} alignContent={"center"}>
+        <img src={onlinelca} alt="onlineLCA" style={openLCA} />
       </Grid>
 
       <Grid item md={6} xs={0}></Grid>
