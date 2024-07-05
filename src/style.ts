@@ -1,6 +1,6 @@
 import { Theme } from "@mui/material";
-import backgroundImage from "./assets/background_start_page.png";
-import backgroundImageMobile from "./assets/background_start_page_mobile.png";
+import backgroundImage from "./assets/background_start_page.svg";
+import backgroundImageMobile from "./assets/background_start_page_mobile.svg";
 
 export const background = ({ theme }: { theme: Theme }) => ({
   display: "flex",
@@ -13,7 +13,6 @@ export const background = ({ theme }: { theme: Theme }) => ({
   },
   backgroundPosition: "center",
   backgroundColor: "rgba(210, 210, 210)",
-  backgroundAttachment: "scroll",
 });
 
 export const logo = {
