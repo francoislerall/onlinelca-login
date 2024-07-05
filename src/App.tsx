@@ -1,5 +1,5 @@
 import { Grid, Typography, Stack, Box, styled } from "@mui/material";
-import { container, logo, openlca } from "./style";
+import { container, logo } from "./style";
 import appLogo from "./assets/logo.svg";
 import onlinelca from "./assets/onlinelca.png";
 import LoginForm from "./login-form";

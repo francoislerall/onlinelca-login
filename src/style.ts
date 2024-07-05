@@ -4,10 +4,10 @@ export const container = {
   display: "flex",
   height: "100vh",
   backgroundImage: `url(${homeBackground})`,
-  backgroundRepeat: "repeat",
-  backgroundSize: "150vh",
   backgroundPosition: "center",
   backgroundColor: "rgba(210, 210, 210)",
+  backgroundAttachment: "scroll",
+  backgroundSize: "1800px",
 };
 
 export const logo = {
