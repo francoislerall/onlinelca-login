@@ -7,12 +7,12 @@ export const background = ({ theme }: { theme: Theme }) => ({
   height: "100vh",
   backgroundImage: `url(${backgroundImage})`,
   backgroundSize: "1800px",
+  backgroundPosition: "center",
+  backgroundColor: "rgba(210, 210, 210)",
   [theme.breakpoints.down("md")]: {
     backgroundImage: `url(${backgroundImageMobile})`,
     backgroundSize: "700px",
   },
-  backgroundPosition: "center",
-  backgroundColor: "rgba(210, 210, 210)",
 });
 
 export const logo = {
