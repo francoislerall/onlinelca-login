@@ -1,58 +1,60 @@
-import { Grid } from '@mui/material';
-import { button, input, label } from './style';
+import { Box } from "@mui/material";
+import { button, input, label, labelElement, loginForm } from "./style";
 
 export enum LoginFormKeys {
-  Email = 'email',
-  Password = 'password',
+  Email = "email",
+  Password = "password",
 }
 
 const LoginForm = () => {
-  const emailRegExp = '^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$';
+  const emailRegExp = "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$";
 
   return (
-    <form method={'post'}>
-      <Grid container alignItems={'center'} spacing={2}>
-        <Grid item style={label} md={3} xs={6}>
-          <label htmlFor={LoginFormKeys.Email}>
-            Email
-          </label>
-        </Grid>
+    <form method={"post"}>
+      <Box>
+        <table style={loginForm}>
+          <tr>
+            <td style={labelElement}>
+              <label htmlFor={LoginFormKeys.Email} style={label}>
+                Email
+              </label>
+            </td>
+            <td>
+              <input
+                title="Please enter a valid email address"
+                type="text"
+                name={LoginFormKeys.Email}
+                required
+                pattern={emailRegExp}
+                style={input}
+              />
+            </td>
+          </tr>
 
-        <Grid item pr={4} md={9} xs={6}>
-          <input
-            title='Please enter a valid email address'
-            type='text'
-            name={LoginFormKeys.Email}
-            required
-            pattern={emailRegExp}
-            style={input}
-          />
-        </Grid>
+          <tr>
+            <td style={labelElement}>
+              <label htmlFor={LoginFormKeys.Password} style={label}>
+                Password
+              </label>
+            </td>
+            <td>
+              <input
+                title="Please enter your password"
+                type="password"
+                name={LoginFormKeys.Password}
+                required
+                style={input}
+              />
+            </td>
+          </tr>
+        </table>
+      </Box>
 
-        <Grid item style={label} md={3} xs={6}>
-          <label htmlFor={LoginFormKeys.Password}>
-            Password
-          </label>
-        </Grid>
-
-        <Grid item pr={4} md={9} xs={6}>
-          <input
-            title='Please enter your password'
-            type='password'
-            name={LoginFormKeys.Password}
-            required
-            style={input}
-          />
-        </Grid>
-
-        <Grid item md={3} xs={6}></Grid>
-
-        <Grid item  md={9} xs={6} display={'flex'} justifyContent={'flex-start'}>
-          <button type='submit' style={button}>
-            <b>Go!</b>
-          </button>
-        </Grid>
-      </Grid>
+      <Box display={"flex"} justifyContent={"center"} pt={2}>
+        <button type="submit" style={button}>
+          <b>Go!</b>
+        </button>
+      </Box>
     </form>
   );
 };

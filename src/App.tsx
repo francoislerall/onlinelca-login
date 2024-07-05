@@ -1,9 +1,17 @@
-import { Grid, Typography, Stack, Box } from "@mui/material";
+import { Grid, Typography, Stack, Box, styled } from "@mui/material";
 import { container, logo, openlca } from "./style";
 import appLogo from "./assets/logo.svg";
 import onlinelca from "./assets/onlinelca.png";
 import LoginForm from "./login-form";
 import GreenDeltaLogo from "./green-delta-logo";
+
+const LoginFormItem = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "flex-start",
+  [theme.breakpoints.down("md")]: {
+    justifyContent: "center",
+  },
+}));
 
 const App = () => {
   return (
@@ -26,18 +34,25 @@ const LoginComponent = () => {
   const error = "";
 
   return (
-    <Grid container spacing={5}>
-      <Grid item xs={6} display={"flex"} justifyContent={"flex-end"}>
+    <Grid container rowSpacing={5}>
+      <Grid
+        item
+        md={6}
+        xs={5}
+        display={"flex"}
+        justifyContent={"flex-end"}
+        paddingX={"2vw"}
+      >
         <img src={appLogo} alt="logo" style={logo} />
       </Grid>
-      <Grid item xs={6}>
-        <img src={onlinelca} alt="onlineLCA" style={openlca} />
+      <Grid item md={6} xs={7}>
+        <img src={onlinelca} alt="onlineLCA" style={logo} />
       </Grid>
 
       <Grid item md={6} xs={0}></Grid>
 
       <Grid item xs>
-        <Stack spacing={2} pr={2}>
+        <Stack>
           {message && (
             <Typography
               variant="h5"
@@ -60,9 +75,9 @@ const LoginComponent = () => {
             </Typography>
           )}
 
-          <Grid item>
+          <LoginFormItem item>
             <LoginForm />
-          </Grid>
+          </LoginFormItem>
         </Stack>
       </Grid>
     </Grid>
